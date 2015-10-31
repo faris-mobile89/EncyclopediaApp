@@ -6,4 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_splash_screen">Splash Screen Activity</string>
     <string name="title_activity_test">TestActivity</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_numbers">NumbersActivity</string>
 </resources>
