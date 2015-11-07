@@ -7,6 +7,9 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Toast;
 
 import org.lucasr.twowayview.TwoWayView;
 
@@ -34,6 +37,9 @@ public class MasterActivity extends Activity {
 
         Item item = new Item();
         item.setId("");
+        item.setImageUrl("");
+        item.setText("");
+        item.setVoiceUrl("");
 
         items.add(item);
         items.add(item);
@@ -46,9 +52,19 @@ public class MasterActivity extends Activity {
         items.add(item);
         items.add(item);
         items.add(item);
+
 
         ItemsAdapter adapter = new ItemsAdapter(this,items);
         tabView.setAdapter(adapter);
+
+
+        tabView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
+
+                Toast.makeText(MasterActivity.this,"index ="+index,Toast.LENGTH_LONG).show();
+            }
+        });
 
 
     }
