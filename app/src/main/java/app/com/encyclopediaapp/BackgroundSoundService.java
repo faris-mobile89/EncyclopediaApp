@@ -13,6 +13,8 @@ import java.io.IOException;
 //http://stackoverflow.com/questions/8209858/android-background-music-service/8209975#8209975
 
 public class BackgroundSoundService extends Service {
+
+
     private static final String TAG = null;
     MediaPlayer player;
     public IBinder onBind(Intent arg0) {
