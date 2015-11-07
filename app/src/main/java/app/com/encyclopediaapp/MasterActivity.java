@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.lucasr.twowayview.TwoWayView;
@@ -26,23 +27,27 @@ public class MasterActivity extends Activity {
 
 
     @Bind(R.id.sliderTabs) TwoWayView tabView;
+    @Bind (R.id.imageViewItem) ImageView imageView;
 
+    ArrayList<Item> items;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
         ButterKnife.bind(this);
 
-        ArrayList<Item> items = new ArrayList<>();
+        items = new ArrayList<>();
 
         Item item = new Item();
         item.setId("");
-        item.setImageUrl("");
+        item.setImageUrl("aan1.jpg");
         item.setText("");
-        item.setVoiceUrl("");
+        item.setVoiceUrl("a7.mp3");
 
         items.add(item);
+
         items.add(item);
+
         items.add(item);
         items.add(item);
         items.add(item);
@@ -62,9 +67,25 @@ public class MasterActivity extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int index, long l) {
 
-                Toast.makeText(MasterActivity.this,"index ="+index,Toast.LENGTH_LONG).show();
+                doActionOnClickAtIndex(index);
+
             }
         });
 
     }
+
+
+    private void doActionOnClickAtIndex( int index){
+
+        Toast.makeText(MasterActivity.this,"index ="+index,Toast.LENGTH_LONG).show();
+
+        Item clickedItem = items.get(index);
+        clickedItem.getImageUrl();
+        clickedItem.getText();
+
+        imageView.setImageResource(R.drawable.aan1);
+        AppFunctions.play(this,"letters/a7.mp3");
+    }
+
+
 }
