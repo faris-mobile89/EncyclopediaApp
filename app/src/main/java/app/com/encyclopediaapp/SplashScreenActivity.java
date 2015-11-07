@@ -12,9 +12,7 @@ import butterknife.ButterKnife;
 public class SplashScreenActivity extends Activity {
 
 
-
     @Bind(R.id.background_img) ImageView myImage;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +20,20 @@ public class SplashScreenActivity extends Activity {
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
 
-      Runnable goToMain = new Runnable() {
+        Intent svc = new Intent(this, BackgroundSoundService.class);
+        startService(svc);
+
+
+        Runnable goToMain = new Runnable() {
           @Override
           public void run() {
-
-              //myImage.setImageResource(R.drawable.coffee_1);
 
               Intent mainActivity = new
                       Intent(SplashScreenActivity.this,MainActivity.class);
               startActivity(mainActivity);
-
-
-          }
-      };
+              finish();
+           }
+        };
 
         new android.os.Handler().postDelayed(goToMain,3000);
 

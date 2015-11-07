@@ -2,10 +2,9 @@ package app.com.encyclopediaapp;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.Bundle;;
 import android.view.View;
+import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 
 import butterknife.Bind;
@@ -26,16 +25,17 @@ public class MainActivity extends Activity {
             public void onClick(View view) {
 
                 Intent goToNumberActivity = new Intent(MainActivity.this,
-                        NumbersActivity.class);
+                        MasterActivity.class);
                 startActivity(goToNumberActivity);
-
-                // Github
-
             }
         });
 
-
-
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopService(new Intent(this,
+                BackgroundSoundService.class));
+    }
 }
