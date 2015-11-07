@@ -33,7 +33,7 @@ public class BackgroundSoundService extends Service {
                     afd.getLength()
             );
             player.setLooping(true); // Set looping
-            player.setVolume(100, 100);
+            player.setVolume(50, 50);
         } catch (IOException e) {
             e.printStackTrace();
         }

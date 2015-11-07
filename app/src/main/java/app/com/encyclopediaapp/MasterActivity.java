@@ -84,7 +84,14 @@ public class MasterActivity extends Activity {
         clickedItem.getText();
 
         imageView.setImageResource(R.drawable.aan1);
-        AppFunctions.play(this,"letters/a7.mp3");
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AppFunctions.play(MasterActivity.this, "letters/a7.mp3");
+            }
+        });
+
+
     }
 
 
