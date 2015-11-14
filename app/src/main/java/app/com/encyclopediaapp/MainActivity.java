@@ -12,6 +12,8 @@ import butterknife.ButterKnife;
 public class MainActivity extends Activity {
 
     @Bind(R.id.imageButton) ImageButton numberIcon;
+    @Bind(R.id.imageButton) ImageButton ColorsIcon;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,11 +25,12 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
 
-                Intent goToNumberActivity = new Intent(MainActivity.this, MasterActivity.class);
-                goToNumberActivity.putExtra("type","numbers");
-                startActivity(goToNumberActivity);
+                Intent master = new Intent(MainActivity.this, MasterActivity.class);
+                master.putExtra("type","numbers");
+                startActivity(master);
             }
         });
+
 
     }
 

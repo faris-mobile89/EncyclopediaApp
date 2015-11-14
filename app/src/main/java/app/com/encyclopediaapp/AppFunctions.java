@@ -6,9 +6,6 @@ import android.media.MediaPlayer;
 
 import java.io.IOException;
 
-/**
- * Created by Faris on 11/7/15.
- */
 public class AppFunctions {
 
 

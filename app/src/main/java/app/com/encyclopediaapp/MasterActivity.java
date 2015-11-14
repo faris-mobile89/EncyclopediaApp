@@ -23,7 +23,6 @@ public class MasterActivity extends Activity {
     ArrayList<Item> items;
     private String type;
 
-
     private ImageLoader imageLoader;
 
     @Override
@@ -37,6 +36,7 @@ public class MasterActivity extends Activity {
         type = getIntent().getExtras().getString("type");
 
         if (type.equals("alphabet")) {
+
             items = AppData.getAlphabetsData();
 
         } else if (type.equals("alphabet")) {
@@ -45,14 +45,14 @@ public class MasterActivity extends Activity {
         } else if (type.equals("numbers")) {
             items = AppData.getArabicNumbersData();
 
-        }  else if (type.equals("alphabet")) {
-            items = AppData.getAlphabetsData();
+        }  else if (type.equals("Colors")) {
+            items = AppData.getShapesData();
 
-        } else if (type.equals("alphabet")) {
-            items = AppData.getAlphabetsData();
+        } else if (type.equals("shapes")) {
+            items = AppData.getColorsData();
 
         }  else if (type.equals("alphabet")) {
-            items = AppData.getAlphabetsData();
+            items = AppData.getAnimalsData();
         }
 
 

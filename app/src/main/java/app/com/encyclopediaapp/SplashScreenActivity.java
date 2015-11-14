@@ -29,7 +29,6 @@ public class SplashScreenActivity extends Activity {
         startService(svc);
 
 
-
         Runnable goToMain = new Runnable() {
           @Override
           public void run() {

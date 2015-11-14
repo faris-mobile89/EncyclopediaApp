@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -16,7 +17,7 @@ import java.util.List;
 import app.com.encyclopediaapp.R;
 import app.com.encyclopediaapp.model.Item;
 
-public class ItemsAdapter extends  BaseAdapter {
+public class ItemsAdapter extends BaseAdapter {
 
     private LayoutInflater inflater;
     private List<Item> mItems;
@@ -48,9 +49,11 @@ public class ItemsAdapter extends  BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        // 0
+        View vi = convertView; // empty
 
-        View vi = convertView;
         ViewHolder holder = null;
+
         if (vi == null) {
             vi = inflater.inflate(R.layout.row_item, parent, false);
             holder = new ViewHolder();
@@ -62,6 +65,7 @@ public class ItemsAdapter extends  BaseAdapter {
             // no need to findViews by id
             holder = (ViewHolder) vi.getTag();
         }
+
         Item item = getItem(position);
 
         imageLoader.displayImage(item.getThumbPath(), holder.imgThumbnail,options);
@@ -70,6 +74,7 @@ public class ItemsAdapter extends  BaseAdapter {
 
     static class ViewHolder {
         public ImageView imgThumbnail;
+        public TextView textViewM;
     }
 
 }
