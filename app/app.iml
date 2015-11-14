@@ -92,5 +92,6 @@
     <orderEntry type="library" exported="" name="butterknife-7.0.1" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.0.1" level="project" />
     <orderEntry type="library" exported="" name="twowayview-0.1.4" level="project" />
+    <orderEntry type="library" exported="" name="universal-image-loader-1.9.4" level="project" />
   </component>
 </module>

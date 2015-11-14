@@ -25,7 +25,7 @@ public class BackgroundSoundService extends Service {
     public void onCreate() {
         super.onCreate();
         try {
-            AssetFileDescriptor afd = this.getAssets().openFd("ar/bg_sound.mp3");
+            AssetFileDescriptor afd = this.getAssets().openFd("bg_sound.mp3");
             player = new MediaPlayer();
             player.setDataSource(
                     afd.getFileDescriptor(),

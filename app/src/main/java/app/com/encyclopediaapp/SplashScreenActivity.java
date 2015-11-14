@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
@@ -20,8 +23,10 @@ public class SplashScreenActivity extends Activity {
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
 
+        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(this));
+
         Intent svc = new Intent(this, BackgroundSoundService.class);
-        startService(svc);
+        //startService(svc);
 
 
         Runnable goToMain = new Runnable() {

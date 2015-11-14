@@ -3,20 +3,31 @@ package app.com.encyclopediaapp.model;
 
 public class Item {
 
-    private String id;
     private String text;
     private String voiceUrl;
-    private String imageUrl;
+    private String imagePath;
+    private String thumbPath;
 
-    public Item() {
+    /**
+     *
+     * @param text
+     * @param voiceUrl
+     * @param imagePath
+     * @param thumbPath
+     */
+    public Item(String text, String voiceUrl, String imagePath, String thumbPath) {
+        this.text = text;
+        this.voiceUrl = voiceUrl;
+        this.imagePath = imagePath;
+        this.thumbPath = thumbPath;
     }
 
-    public String getId() {
-        return id;
+    public String getThumbPath() {
+        return thumbPath;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setThumbPath(String thumbPath) {
+        this.thumbPath = thumbPath;
     }
 
     public String getText() {
@@ -35,11 +46,11 @@ public class Item {
         this.voiceUrl = voiceUrl;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImagePath() {
+        return imagePath;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
     }
 }

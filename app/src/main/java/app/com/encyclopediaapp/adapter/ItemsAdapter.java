@@ -1,48 +1,75 @@
 package app.com.encyclopediaapp.adapter;
 
-
+import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
-import java.util.ArrayList;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
+import java.util.List;
 
 import app.com.encyclopediaapp.R;
 import app.com.encyclopediaapp.model.Item;
 
-public class ItemsAdapter extends ArrayAdapter<Item> {
+public class ItemsAdapter extends  BaseAdapter {
 
-    public ItemsAdapter(Context context, ArrayList<Item> items) {
-        super(context, 0, items);
+    private LayoutInflater inflater;
+    private List<Item> mItems;
+    ImageLoader imageLoader;
+    DisplayImageOptions options;
+
+    public ItemsAdapter(Activity activity, List<Item> itemList) {
+        this.mItems = itemList;
+        inflater = (LayoutInflater) activity
+                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        imageLoader = ImageLoader.getInstance();
+        options = new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true).build();
+    }
+
+    @Override
+    public int getCount() {
+        return mItems.size();
+    }
+
+    @Override
+    public Item getItem(int location) {
+        return mItems.get(location);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
     }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
-        Item item = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
-        ViewHolder viewHolder; // view lookup cache stored in tag
-        if (convertView == null) {
-            viewHolder = new ViewHolder();
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.row_item, parent, false);
-            viewHolder.imageView = (ImageView)convertView.findViewById(R.id.imageView);
+
+        View vi = convertView;
+        ViewHolder holder = null;
+        if (vi == null) {
+            vi = inflater.inflate(R.layout.row_item, parent, false);
+            holder = new ViewHolder();
+            holder.imgThumbnail = (ImageView)vi.findViewById(R.id.imageView);
+            vi.setTag(holder);
         } else {
-            viewHolder = (ViewHolder) convertView.getTag();
+            // View recycled !
+            // no need to inflate
+            // no need to findViews by id
+            holder = (ViewHolder) vi.getTag();
         }
+        Item item = getItem(position);
 
-        //viewHolder.imageView.setImageResource(R.mipmap.ic_launcher);
-        // Return the completed view to render on screen
-        return convertView;
+        imageLoader.displayImage(item.getThumbPath(), holder.imgThumbnail,options);
+        return vi;
     }
 
-
-    // View lookup cache
-    private static class ViewHolder {
-        ImageView imageView;
+    static class ViewHolder {
+        public ImageView imgThumbnail;
     }
-
 
 }

@@ -21,10 +21,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".NumbersActivity"
-            android:label="@string/title_activity_numbers" >
-        </activity>
-        <activity
             android:name=".MasterActivity"
             android:label="@string/title_activity_master" >
         </activity>
