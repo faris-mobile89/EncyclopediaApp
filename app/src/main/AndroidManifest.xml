@@ -9,20 +9,22 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name"
+            android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
         </activity>
         <activity
             android:name=".SplashScreenActivity"
-            android:label="@string/title_activity_splash_screen" >
+            android:label="@string/title_activity_splash_screen"
+            android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MasterActivity"
-            android:label="@string/title_activity_master" >
+            android:label="@string/title_activity_master"
+            android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden">
         </activity>
         <service android:name=".BackgroundSoundService"/>
     </application>
