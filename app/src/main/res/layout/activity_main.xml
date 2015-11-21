@@ -4,12 +4,112 @@
     tools:context=".MainActivity"
     android:background="@drawable/home_img">
 
-    <ImageButton
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:id="@+id/imageButton"
-        android:layout_marginTop="91dp"
-        android:src="@mipmap/btn_main_numbers"
-        android:layout_alignParentTop="true" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="100dp"
+            android:id="@+id/numbers"
+            android:layout_marginRight="23dp"
+            android:layout_marginEnd="23dp"
+            android:layout_alignBottom="@+id/alphabets"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/alphabets" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/alphabets"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_toLeftOf="@+id/numbers" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView2"
+            android:background="@drawable/custom_button"
+            android:layout_marginRight="13dp"
+            android:layout_alignTop="@+id/alphabets"
+            android:layout_toLeftOf="@+id/alphabets"
+            android:layout_toStartOf="@+id/alphabets"
+            android:layout_marginEnd="23dp" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView3"
+            android:layout_alignTop="@+id/imageView2"
+            android:layout_toLeftOf="@+id/imageView2"
+            android:layout_toStartOf="@+id/imageView2"
+            android:layout_marginRight="12dp"
+            android:layout_marginEnd="22dp" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView4"
+            android:layout_marginRight="35dp"
+            android:layout_marginEnd="35dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/alphabets"
+            android:layout_alignRight="@+id/alphabets"
+            android:layout_alignEnd="@+id/alphabets" />
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="120dp"
+            android:id="@+id/imageView5"
+            android:layout_marginTop="10dp"
+            android:layout_toLeftOf="@+id/imageView4"
+            android:layout_toStartOf="@+id/imageView4"
+            android:layout_below="@+id/imageView2" />
+
+        <ImageView
+            android:layout_width="105dp"
+            android:layout_height="115dp"
+            android:id="@+id/imageView6"
+            android:layout_marginRight="10dp"
+            android:layout_alignTop="@+id/imageView5"
+            android:layout_toLeftOf="@+id/imageView5"
+            android:layout_toStartOf="@+id/imageView5" />
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="32dp"
+        android:text="تواصل معنا"
+        android:id="@+id/button"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:padding="2dp"
+        android:background="@drawable/custom_button"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:stateListAnimator="@null"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="32dp"
+        android:text="خروج"
+        android:id="@+id/button2"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:padding="2dp"
+        android:background="@drawable/custom_button2"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button"
+        android:layout_marginLeft="24dp"
+        android:stateListAnimator="@null"
+        android:layout_marginStart="24dp" />
+
 
 </RelativeLayout>

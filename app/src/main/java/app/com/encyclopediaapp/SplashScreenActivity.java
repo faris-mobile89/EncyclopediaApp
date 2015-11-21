@@ -23,10 +23,8 @@ public class SplashScreenActivity extends Activity {
         setContentView(R.layout.activity_splash_screen);
         ButterKnife.bind(this);
 
-        ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(this));
-
         Intent svc = new Intent(this, BackgroundSoundService.class);
-        startService(svc);
+        //startService(svc);
 
 
         Runnable goToMain = new Runnable() {
@@ -41,7 +39,6 @@ public class SplashScreenActivity extends Activity {
         };
 
         new android.os.Handler().postDelayed(goToMain,3000);
-
 
     }
 

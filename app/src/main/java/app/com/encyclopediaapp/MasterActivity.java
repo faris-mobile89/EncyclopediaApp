@@ -1,6 +1,7 @@
 package app.com.encyclopediaapp;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -36,23 +37,24 @@ public class MasterActivity extends Activity {
         type = getIntent().getExtras().getString("type");
 
         if (type.equals("alphabet")) {
-
-            items = AppData.getAlphabetsData();
-
-        } else if (type.equals("alphabet")) {
             items = AppData.getAlphabetsData();
 
         } else if (type.equals("numbers")) {
             items = AppData.getArabicNumbersData();
 
-        }  else if (type.equals("Colors")) {
-            items = AppData.getShapesData();
-
-        } else if (type.equals("shapes")) {
+        }  else if (type.equals("colors")) {
             items = AppData.getColorsData();
 
-        }  else if (type.equals("alphabet")) {
+        } else if (type.equals("animals")) {
             items = AppData.getAnimalsData();
+
+        }  else if (type.equals("quraan")) {
+            stopService(new Intent(this,
+                    BackgroundSoundService.class));
+            items = AppData.getQuraanData();
+
+        } else if (type.equals("fruits")) {
+            items = AppData.getFruitsData();
         }
 
 
@@ -82,5 +84,21 @@ public class MasterActivity extends Activity {
                 AppFunctions.play(MasterActivity.this, soundUrl);
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        AppFunctions.stop();
+
+        if (type.equals("quraan")){
+            startService(new Intent(this, BackgroundSoundService.class));
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        AppFunctions.stop();
     }
 }
