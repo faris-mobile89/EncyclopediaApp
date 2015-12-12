@@ -39,21 +39,21 @@ public class AppData {
     public static ArrayList<Item> getArabicNumbersData(){
 
         imageDirectory = "assets://numbers/image/";
-        thumbDirectory = "assets://numbers/thumb/";
+        thumbDirectory = "assets://numbers/image/";
         soundDirectory = "numbers/sound/";
 
         ArrayList<Item> itemList = new ArrayList<>();
 
-        itemList.add(new Item(null, soundDirectory+"n0.mp3", imageDirectory+"num0.jpg",thumbDirectory+"num0.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n1.mp3", imageDirectory+"num1.jpg",thumbDirectory+"num1.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n2.mp3", imageDirectory+"num2.jpg",thumbDirectory+"num2.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n3.mp3", imageDirectory+"num3.jpg",thumbDirectory+"num3.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n4.mp3", imageDirectory+"num4.jpg",thumbDirectory+"num4.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n5.mp3", imageDirectory+"num5.jpg",thumbDirectory+"num5.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n6.mp3", imageDirectory+"num6.jpg",thumbDirectory+"num6.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n7.mp3", imageDirectory+"num7.jpg",thumbDirectory+"num7.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n8.mp3", imageDirectory+"num8.jpg",thumbDirectory+"num8.jpg"));
-        itemList.add(new Item(null, soundDirectory+"n9.mp3", imageDirectory+"num9.jpg",thumbDirectory+"num9.jpg"));
+        itemList.add(new Item(null, soundDirectory+"1.3ga", imageDirectory+"num0_.jpg",thumbDirectory+"num0_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n1.mp3", imageDirectory+"num1_.jpg",thumbDirectory+"num1_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n2.mp3", imageDirectory+"num2_.jpg",thumbDirectory+"num2_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n3.mp3", imageDirectory+"num3_.jpg",thumbDirectory+"num3_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n4.mp3", imageDirectory+"num4_.jpg",thumbDirectory+"num4_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n5.mp3", imageDirectory+"num5_.jpg",thumbDirectory+"num5_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n6.mp3", imageDirectory+"num6_.jpg",thumbDirectory+"num6_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n7.mp3", imageDirectory+"num7_.jpg",thumbDirectory+"num7_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n8.mp3", imageDirectory+"num8_.jpg",thumbDirectory+"num8_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n9.mp3", imageDirectory+"num9_.jpg",thumbDirectory+"num9_.jpg"));
 
         return itemList;
     }
@@ -92,15 +92,15 @@ public class AppData {
 
         ArrayList<Item> itemList = new ArrayList<>();
 
-        itemList.add(new Item(null, soundDirectory+"cat.mp3", imageDirectory+"cat1.jpg",thumbDirectory+"cat.png"));
-        itemList.add(new Item(null, soundDirectory+"cow.mp3", imageDirectory+"cow2.jpg",thumbDirectory+"cow.png"));
-        itemList.add(new Item(null, soundDirectory+"dog.mp3", imageDirectory+"dog3.jpg",thumbDirectory+"dog.png"));
-        itemList.add(new Item(null, soundDirectory+"elephant.mp3", imageDirectory+"elephant5.jpg",thumbDirectory+"elephant.png"));
-        itemList.add(new Item(null, soundDirectory+"horse.mp3", imageDirectory+"horse1.jpg",thumbDirectory+"horse.png"));
-        itemList.add(new Item(null, soundDirectory+"lion.mp3", imageDirectory+"lion3.jpg",thumbDirectory+"lion.png"));
-        itemList.add(new Item(null, soundDirectory+"mouse.mp3", imageDirectory+"mouse1.png",thumbDirectory+"cat.png"));
-        itemList.add(new Item(null, soundDirectory+"sheep.mp3", imageDirectory+"sheep3.jpg",thumbDirectory+"sheep.png"));
-        itemList.add(new Item(null, soundDirectory+"wolf.mp3", imageDirectory+"wolf3.jpg",thumbDirectory+"wolf.png"));
+        itemList.add(new Item(null, soundDirectory+"1.mp3",   imageDirectory+"cat1.jpg",thumbDirectory+"cat.png"));
+        itemList.add(new Item(null, soundDirectory+"039.mp3", imageDirectory+"donkey.jpg",thumbDirectory+"donkey_thumb.png"));
+        itemList.add(new Item(null, soundDirectory+"033.mp3", imageDirectory+"dog3.jpg",thumbDirectory+"dog.png"));
+        itemList.add(new Item(null, soundDirectory+"043.mp3", imageDirectory+"chicken.jpg",thumbDirectory+"chicken.jpg"));
+        itemList.add(new Item(null, soundDirectory+"049.mp3", imageDirectory+"deer.jpg",thumbDirectory+"deer_thumb.jpg"));
+        itemList.add(new Item(null, soundDirectory+"038.mp3", imageDirectory+"lion3.jpg",thumbDirectory+"lion.png"));
+        itemList.add(new Item(null, soundDirectory+"034.mp3", imageDirectory+"mouse1.jpg",thumbDirectory+"mouse.png"));
+        itemList.add(new Item(null, soundDirectory+"032.mp3", imageDirectory+"sheep3.jpg",thumbDirectory+"sheep.png"));
+        itemList.add(new Item(null, soundDirectory+"050.mp3", imageDirectory+"rabbit.jpg",thumbDirectory+"rabbit_thumb.png"));
 
         return itemList;
     }

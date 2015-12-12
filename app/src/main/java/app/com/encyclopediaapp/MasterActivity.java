@@ -31,6 +31,7 @@ public class MasterActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_master);
         ButterKnife.bind(this);
+
         imageLoader = ImageLoader.getInstance();
         items = new ArrayList<>();
 
@@ -49,8 +50,7 @@ public class MasterActivity extends Activity {
             items = AppData.getAnimalsData();
 
         }  else if (type.equals("quraan")) {
-            stopService(new Intent(this,
-                    BackgroundSoundService.class));
+            stopService(new Intent(this, BackgroundSoundService.class));
             items = AppData.getQuraanData();
 
         } else if (type.equals("fruits")) {

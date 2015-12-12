@@ -22,9 +22,7 @@ public class MainActivity extends Activity {
         startMasterActivity("alphabet");
     }
 
-    @OnClick(R.id.imageView2) void lunchColors(){
-        startMasterActivity("colors");
-    }
+    @OnClick(R.id.imageView2) void lunchColors(){startMasterActivity("colors");}
 
     @OnClick(R.id.imageView3) void lunchAnimals(){
         startMasterActivity("animals");
@@ -45,6 +43,23 @@ public class MainActivity extends Activity {
 
     }
 
+    @Bind(R.id.buttonShare) Button btnShare;
+
+    @OnClick(R.id.buttonShare) void share(){
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Share");
+        stringBuilder.append("\n");
+        String appPackageName = getPackageName();
+        stringBuilder.append("http://play.google.com/store/apps/details?id=" + appPackageName);
+        Intent shareIntent = new Intent();
+        shareIntent.setAction(Intent.ACTION_SEND);
+        shareIntent.putExtra(Intent.EXTRA_TEXT, stringBuilder.toString());
+        shareIntent.setType("text/plain");
+        startActivity(Intent.createChooser(shareIntent,"Share"));
+
+    }
+
     @OnClick(R.id.button2) void quitApp(){
         stopService(new Intent(this,
                 BackgroundSoundService.class));
@@ -57,7 +72,6 @@ public class MainActivity extends Activity {
         Intent master = new Intent(MainActivity.this, MasterActivity.class);
         master.putExtra("type",type);
         startActivity(master);
-
     }
 
     @Override
@@ -65,12 +79,13 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+        btnShare.setText("مشاركة");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stopService(new Intent(this,
-                BackgroundSoundService.class));
+        stopService(new Intent(this, BackgroundSoundService.class));
     }
+
 }

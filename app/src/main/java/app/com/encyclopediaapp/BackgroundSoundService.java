@@ -2,8 +2,10 @@ package app.com.encyclopediaapp;
 
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetFileDescriptor;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.IBinder;
 import android.util.Log;
@@ -18,9 +20,9 @@ public class BackgroundSoundService extends Service {
     private static final String TAG = null;
     MediaPlayer player;
     public IBinder onBind(Intent arg0) {
-
         return null;
     }
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -33,16 +35,20 @@ public class BackgroundSoundService extends Service {
                     afd.getLength()
             );
             player.setLooping(true); // Set looping
-            player.setVolume(50, 50);
+            player.setVolume(10, 10);
+            AudioManager audioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, 20, 0);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.d("service", "onStartCommand");
         try {
             player.prepare();
             player.start();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

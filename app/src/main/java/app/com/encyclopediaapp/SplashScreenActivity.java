@@ -24,7 +24,7 @@ public class SplashScreenActivity extends Activity {
         ButterKnife.bind(this);
 
         Intent svc = new Intent(this, BackgroundSoundService.class);
-        //startService(svc);
+        startService(svc);
 
 
         Runnable goToMain = new Runnable() {
