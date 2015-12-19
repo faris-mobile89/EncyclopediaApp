@@ -44,7 +44,7 @@ public class AppData {
 
         ArrayList<Item> itemList = new ArrayList<>();
 
-        itemList.add(new Item(null, soundDirectory+"1.3ga", imageDirectory+"num0_.jpg",thumbDirectory+"num0_.jpg"));
+        itemList.add(new Item(null, soundDirectory+"n0.mp3", imageDirectory+"num0_.jpg",thumbDirectory+"num0_.jpg"));
         itemList.add(new Item(null, soundDirectory+"n1.mp3", imageDirectory+"num1_.jpg",thumbDirectory+"num1_.jpg"));
         itemList.add(new Item(null, soundDirectory+"n2.mp3", imageDirectory+"num2_.jpg",thumbDirectory+"num2_.jpg"));
         itemList.add(new Item(null, soundDirectory+"n3.mp3", imageDirectory+"num3_.jpg",thumbDirectory+"num3_.jpg"));
@@ -75,6 +75,7 @@ public class AppData {
             itemList.add(new Item(null,
                     soundDirectory+"ss"+ number +".mp3",
                     imageDirectory+"col"+ number +".jpg",imageDirectory+"col"+ number +".jpg"));
+
         }
 
         return itemList;
